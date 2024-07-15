@@ -68,7 +68,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 label {
@@ -111,6 +111,18 @@ textarea {
   resize: vertical;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row; /* Horizontal layout by default */
+  width: 100%;
+}
+
+.content {
+  flex: 1; /* Takes the remaining space of the flex container */
+  padding: 20px; /* Just for some internal spacing */
+  border: 1px solid #ccc; /* For visual representation */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -121,5 +133,16 @@ textarea {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Media query for screen sizes 800px and below */
+@media (max-width: 800px) {
+  .wrapper {
+    flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  form, .content {
+    width: 100%; /* Both elements take full width */
   }
 }
