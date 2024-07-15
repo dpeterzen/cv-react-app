@@ -1,5 +1,6 @@
 function GeneralInput(props) {
-  function handleName(e) {
+
+  const handleName = (e) => {
     props.setGeneralInfo({ ...props.generalInfo, name: e.target.value });
   }
 
@@ -40,9 +41,6 @@ function GeneralInput(props) {
           onChange={handlePhone}
         />
       </label>
-      <p>{props.generalInfo.name}</p>
-      <p>{props.generalInfo.email}</p>
-      <p>{props.generalInfo.phone}</p>
     </>
   );
 }

@@ -28,6 +28,17 @@ function App() {
         educations={educations}
         setEducations={setEducations}
       />
+      <div className="content">
+        <p>Preview content container</p>
+        <p>{generalInfo.name}</p>
+        {educations.map((education) => (
+          <div key={education.id}>
+            <p>{education.school}</p>
+            <p>{education.degree}</p>
+          </div>
+        ))}
+        <p></p>
+      </div>
     </>
   );
 }

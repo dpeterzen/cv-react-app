@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import GeneralInput from "./GeneralInput";
 import EducationInput from "./EducationInput";
+import '../styles/MainForm.css';
 
 function MainForm({
   generalInfo,
@@ -33,29 +34,38 @@ function MainForm({
     )
   }
 
+  const deleteEducation = (educationId) => {
+    setEducations(
+      educations.filter((education) => education.id !== educationId)
+    );
+  }
+
   return (
     <>
       <h1 className="app-title">CV Generator</h1>
       <form>
         <section>
           <h2>General Info</h2>
+          <div className="input-container">
           <GeneralInput
             generalInfo={generalInfo}
             setGeneralInfo={setGeneralInfo}
           />
+          </div>
         </section>
 
         <section>
           <h2>Education</h2>
-          {educations.map((education) => ( // use parens instead of brackets inside jsx when in the template
-            <div key={education.id}>
+          {educations.map((education) => (
+            <div className="input-container" key={education.id}>
               <EducationInput
                 education={education}
                 updateEducation={updateEducation}
+                deleteEducation={deleteEducation}
               />
             </div>
           ))}
-          <button type="button" onClick={addEducation}>Add Education</button>
+          <button className="add-education" type="button" onClick={addEducation}>Add Education</button>
         </section>
       </form>
     </>
