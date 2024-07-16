@@ -35,7 +35,7 @@ function MainForm({
           return education;
         }
       })
-    )
+    );
   }
 
   const deleteEducation = (educationId) => {
@@ -77,7 +77,6 @@ function MainForm({
 
   return (
     <>
-      <h1 className="app-title">CV Generator</h1>
       <form>
         <section>
           <h2>General Info</h2>
