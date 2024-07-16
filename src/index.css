@@ -25,7 +25,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  /* place-items: center; */
+  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -60,7 +60,6 @@ form {
   align-items: center;
   gap: 3rem;
   width: 100%;
-  max-width: 400px;
 }
 
 section {
@@ -113,14 +112,25 @@ textarea {
 
 .wrapper {
   display: flex;
-  flex-direction: row; /* Horizontal layout by default */
-  width: 100%;
+  flex-direction: row; /* Ensure horizontal layout */
+  /* width: 100%;  Full width to cover the viewport */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.content {
-  flex: 1; /* Takes the remaining space of the flex container */
-  padding: 20px; /* Just for some internal spacing */
-  border: 1px solid #ccc; /* For visual representation */
+.form-container {
+  width: 100%; /* Allows the form to grow but be capped by max-width */
+  max-width: 400px; /* Maximum width of the form */
+}
+
+.preview {
+  /* flex-grow: 1;  Allows the preview to fill all available space */
+  min-width: 700px;
+  height: 800px;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -136,13 +146,27 @@ textarea {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .preview {
+    box-shadow: rgba(255, 253, 253, 0.24) 0px 3px 8px;
+  }
+}
+
 /* Media query for screen sizes 800px and below */
 @media (max-width: 800px) {
   .wrapper {
-    flex-direction: column; /* Stack vertically on smaller screens */
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
   }
+  .form-container {
+    width: 100%; /* Full width for both sections on smaller screens */
+    max-width: none; /* Remove max-width restriction for the form on small screens */
+  }
+  .preview {
+    margin-left: 0;
+    min-width: 0;
 
-  form, .content {
-    width: 100%; /* Both elements take full width */
   }
 }
+
