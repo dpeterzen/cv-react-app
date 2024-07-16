@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import GeneralInput from "./GeneralInput";
 import EducationInput from "./EducationInput";
+import JobInput from "./JobInput";
 import '../styles/MainForm.css';
 
 function MainForm({
@@ -8,7 +9,10 @@ function MainForm({
   setGeneralInfo,
   educations,
   setEducations,
+  jobs,
+  setJobs
 }) {
+
   const addEducation = () => {
     setEducations([
       ...educations,
@@ -40,6 +44,37 @@ function MainForm({
     );
   }
 
+  const addJob = () => {
+    setJobs([
+      ...jobs,
+      {
+        id: uuidv4(),
+        company: '',
+        position: '',
+        responsibilites: '',
+        start: '',
+        end: '',
+        isCurrent: false,
+      },
+    ]);
+  }
+
+  const updateJob = (jobId, property, value) => {
+    setJobs((prevJobs) => 
+      prevJobs.map((job) => {
+        if (job.id === jobId) {
+          return { ...job, [property]: value };
+        } else {
+          return job;
+        }
+      })
+    );
+  }
+
+  const deleteJob = (jobId) => {
+    setJobs(jobs.filter((job) => job.id !== jobId));
+  }
+
   return (
     <>
       <h1 className="app-title">CV Generator</h1>
@@ -66,6 +101,20 @@ function MainForm({
             </div>
           ))}
           <button className="add-education" type="button" onClick={addEducation}>Add Education</button>
+        </section>
+
+        <section>
+          <h2>Work Experience</h2>
+          {jobs.map((job) => (
+            <div className="input-container" key={job.id}>
+            <JobInput
+              job={job}
+              updateJob={updateJob}
+              deleteJob={deleteJob}
+            />
+          </div>
+          ))}
+          <button className="add-job" type="button" onClick={addJob}>Add Job</button>
         </section>
       </form>
     </>

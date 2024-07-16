@@ -20,6 +20,18 @@ function App() {
     }
   ]);
 
+  const [jobs, setJobs] = useState([
+    {
+      id: uuidv4(),
+      company: '',
+      position: '',
+      responsibilites: '',
+      start: '',
+      end: '',
+      isCurrent: false,
+    },
+  ]);
+
   return (
     <>
       <MainForm
@@ -27,6 +39,8 @@ function App() {
         setGeneralInfo={setGeneralInfo}
         educations={educations}
         setEducations={setEducations}
+        jobs={jobs}
+        setJobs={setJobs}
       />
       <div className="content">
         <p>Preview content container</p>
