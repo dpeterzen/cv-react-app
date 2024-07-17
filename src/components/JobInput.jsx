@@ -62,7 +62,6 @@ function JobInput({ job, updateJob, deleteJob }) {
           id={"responsibilities-" + job.id}
           value={job.responsibilities}
           rows="4"
-          cols="40"
           onChange={(e) => handleResponsibilities(job.id, e)}
         >
         </textarea>
