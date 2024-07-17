@@ -55,7 +55,7 @@ function EducationInput({ education, updateEducation, deleteEducation }) {
         <input
           id={"school-" + education.id}
           type="date"
-          value={education.school}
+          value={education.end}
           onChange={(e) => handleEndDate(education.id, e)}
         />
       </label>

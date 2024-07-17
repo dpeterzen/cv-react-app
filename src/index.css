@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -79,7 +85,6 @@ label {
 
 input {
   /* Make input[type='date'] height consistent with other inputs */
-  height: 1.5rem;
 
   font-size: 1rem;
   padding: 0.5rem;
@@ -123,14 +128,19 @@ textarea {
   max-width: 400px; /* Maximum width of the form */
 }
 
-.preview {
+.cv-container {
   /* flex-grow: 1;  Allows the preview to fill all available space */
-  min-width: 700px;
+  width: 700px;
   height: 800px;
   margin-top: 2rem;
   margin-left: 3rem;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.load-clear-btns {
+  display: flex;
+  gap: 1rem;
 }
 
 @media (prefers-color-scheme: light) {
@@ -147,7 +157,7 @@ textarea {
 }
 
 @media (prefers-color-scheme: dark) {
-  .preview {
+  .cv-container {
     box-shadow: rgba(255, 253, 253, 0.24) 0px 3px 8px;
   }
 }
@@ -163,10 +173,10 @@ textarea {
     width: 100%; /* Full width for both sections on smaller screens */
     max-width: none; /* Remove max-width restriction for the form on small screens */
   }
-  .preview {
+  .cv-container {
     margin-left: 0;
     min-width: 0;
-
+    width: 100%;
   }
 }
 

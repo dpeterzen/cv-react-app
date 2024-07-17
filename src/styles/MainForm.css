@@ -29,7 +29,6 @@ section .input-container:not(:first-of-type) {
 
 .delete-btn {
     color: #d1242f;
-
 }
   
   @media (hover: hover) {

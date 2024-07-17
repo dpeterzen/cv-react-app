@@ -88,10 +88,10 @@ function JobInput({ job, updateJob, deleteJob }) {
         />
       </label>
 
-      <label htmlFor={"school-" + job.id}>
+      <label htmlFor={"end-" + job.id}>
         End date (or expected):
         <input
-          id={"school-" + job.id}
+          id={"end-" + job.id}
           type="date"
           value={job.school}
           onChange={(e) => handleEndDate(job.id, e)}
