@@ -18,7 +18,7 @@ This is a small react app where users can input their information and generate a
 ## Future Features:
 
 - Add a Technical Skills and Projects section to the form.
-- Add built-in AI text generation tools to proof read and recommend improvements to your resume.
+- Incorporate AI to proof read and suggest improvements to your resume.
 
 ## What I learned:
 
