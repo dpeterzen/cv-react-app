@@ -1,12 +1,34 @@
-# The Odin Project CV Application Project
+# CV Generator
 
-https://www.theodinproject.com/
-Currently, two official plugins are available:
+My implementation of the [CV application project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application) for [The Odin Project](https://www.theodinproject.com/). Try it [here](https://cv-generator-react-app.vercel.app/)!
 
-A small application where users can input their information and generate a CV/résumé.
+## Description:
 
-    1. A section to add general information like name, email and phone number.
-    2. A section to add your educational experience (school name, title of study and date of study)
-    3. A section to add practical experience (company name, position title, main responsibilities of your jobs, date from and until when you worked for that company)
+This is a small react app where users can input their information and generate a CV/résumé. I set up the application using [Vite](https://vitejs.dev/) and deployed it using [Vercel](https://vercel.com/).
 
-Be sure to include an edit and submit button for each section or for the whole CV. The submit button should submit your form and display the value of your input fields in HTML elements. The edit button should add back (display) the input fields, with the previously displayed information as values. In those input fields, you should be able to edit and resubmit the content. You’re going to make heavy use of state and props, so make sure you understood those concepts.
+![Screenshot of generated example CV](./public/demo-img.png)
+
+## Features:
+
+- Button to automatically fill out input fields so that users can preview a generated example CV
+- Button to clear all input fields
+- Buttons for adding and deleting educational and work experiences
+- When you done writing your resume, press the Generate my CV! button, print preview the page (cmd-p, ctrl-p), save to PDF, and you are all set!
+
+## Future Features:
+
+- Add a Technical Skills and Projects section to the form.
+- Add built-in AI text generation tools to proof read and recommend improvements to your resume.
+
+## What I learned:
+
+- How to use Vite to set up a new React project
+- Basics of writing JSX
+- Basics of React, including:
+  - Writing, rendering, importing and exporting components
+  - Rendering lists of components using the `map()` method of Array
+  - Conditionally rendering UI
+  - Using keys appropriately so that React can handle the DOM effectively and efficiently
+  - Passing data between components using props
+  - Managing state and sharing state between components
+  - Controlling components such as input fields
