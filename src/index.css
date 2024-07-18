@@ -128,15 +128,22 @@ textarea {
 .form-container {
   width: 100%;
   max-width: 400px; /* Maximum width of the form */
+  min-width: 400px; /* Maximum width of the form */
 }
 
 .cv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: 3rem;
+}
+
+.preview-container {
   flex-grow: 1;
   min-width: 700px;
   min-height: 800px;
   height: auto;
-  margin-top: 2rem;
-  margin-left: 3rem;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   overflow: auto;
@@ -145,6 +152,10 @@ textarea {
 .load-clear-btns {
   display: flex;
   gap: 1rem;
+}
+
+.generate-cv {
+  margin-top: 1rem;
 }
 
 @media (prefers-color-scheme: light) {
@@ -161,7 +172,7 @@ textarea {
 }
 
 @media (prefers-color-scheme: dark) {
-  .cv-container {
+  .preview-container {
     box-shadow: rgba(255, 253, 253, 0.24) 0px 3px 8px;
   }
 }
@@ -174,14 +185,14 @@ textarea {
     margin-right: 0;
     max-width: none;
   }
-  .form-container, .cv-container {
+  .form-container, .preview-container, .cv-container {
     width: 100%;
     max-width: none;
     min-width: 0;
     margin: 0;
   }
 
-  .cv-container {
+  .preview-container {
     margin-top: 1rem;
   }
 }

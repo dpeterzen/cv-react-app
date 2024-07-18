@@ -33,6 +33,45 @@ function App() {
     },
   ]);
 
+  const handleGenerateCV = () => {
+    const newWindow = window.open('', '_blank');
+  
+    // Start writing the document
+    newWindow.document.write('<!DOCTYPE html><html><head><title>Preview CV</title>');
+  
+    // Include external stylesheets
+    Array.from(document.querySelectorAll('link[rel="stylesheet"]')).forEach(link => {
+      newWindow.document.write(link.outerHTML);
+    });
+  
+    // Include inline styles
+    Array.from(document.querySelectorAll('style')).forEach(style => {
+      newWindow.document.write(style.outerHTML);
+    });
+  
+    // Adding custom styles to center the preview-container
+    newWindow.document.write(`
+      <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start; /* Align at the top */
+          height: 100vh;
+          margin: 0; /* Remove default margin */
+          padding: 20px; /* Optional padding */
+          box-sizing: border-box; /* Include padding in height calculation */
+        }
+        .preview-container {
+          width: auto; /* Or set a specific width if needed */
+        }
+      </style>
+    `);
+  
+    newWindow.document.write('</head><body>');
+    newWindow.document.write(document.querySelector('.preview-container').innerHTML);
+    newWindow.document.write('</body></html>');
+    newWindow.document.close();
+  };
   return (
     <>
       <h1 className="app-title">CV Generator</h1>
@@ -48,11 +87,14 @@ function App() {
           />
         </div>
         <div className="cv-container">
-          <Preview
-            generalInfo={generalInfo}
-            educations={educations}
-            jobs={jobs}
-          />
+          <div className="preview-container">
+            <Preview
+              generalInfo={generalInfo}
+              educations={educations}
+              jobs={jobs}
+            />
+          </div>
+          <button className="generate-cv" type="button" onClick={handleGenerateCV}>Generate my CV!</button>
         </div>
       </div>
     </>
