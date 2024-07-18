@@ -7,7 +7,7 @@ My implementation of the [CV application project](https://www.theodinproject.com
 This is a small react app where users can input their information and generate a CV/résumé. I set up the application using [Vite](https://vitejs.dev/) and deployed it using [Vercel](https://vercel.com/).
 
 ![Screenshot of generated example CV](./public/demo-img.png)
-- When you done writing your resume, press the Generate my CV! button, print preview the page (cmd-p, ctrl-p), save to PDF, and you are all set!
+- When you have finished writing your resume, press the Generate my CV! button, print preview the page (cmd-p, ctrl-p), and save to PDF.
 
 ## Features:
 
