@@ -72,6 +72,7 @@ function App() {
     newWindow.document.write('</body></html>');
     newWindow.document.close();
   };
+
   return (
     <>
       <h1 className="app-title">CV Generator</h1>

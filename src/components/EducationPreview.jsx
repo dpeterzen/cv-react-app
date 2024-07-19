@@ -1,5 +1,16 @@
 import '../styles/EducationPreview.css';
 
+// Helper function to format date or return empty string if invalid
+const formatDate = (dateString) => {
+  if (!dateString) return '';  // Return empty if no date provided
+  const date = new Date(dateString);
+  return isNaN(date.getTime()) ? '' : date.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'short',
+    timeZone: 'UTC',
+  });
+};
+
 function EducationPreview({ education }) {
     return (
       <div className="education-preview">
@@ -8,19 +19,12 @@ function EducationPreview({ education }) {
           <p className="degree">{education.degree}</p>
         </div>
         <div>
-          <p>
-            {new Date(education.start).toLocaleDateString('en-us', {
-              year: 'numeric',
-              month: 'short',
-              timeZone: 'UTC',
-            })}{' '}
-            -{' '}
-            {new Date(education.end).toLocaleDateString('en-us', {
-              year: 'numeric',
-              month: 'short',
-              timeZone: 'UTC',
-            })}
-          </p>
+        <p>
+          {formatDate(education.start)}{' '}
+          {education.start && '-'}{' '}
+          {!education.start && education.end ? ' - ' : ''}
+          {formatDate(education.end)}
+        </p>
         </div>
       </div>
     );
