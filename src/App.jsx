@@ -61,8 +61,9 @@ function App() {
           padding: 20px; /* Optional padding */
           box-sizing: border-box; /* Include padding in height calculation */
         }
-        .preview-container {
-          width: auto; /* Or set a specific width if needed */
+        .preview {
+          width: 700px;
+          min-height: 800px;
         }
       </style>
     `);
