@@ -134,7 +134,7 @@ textarea {
 .cv-container {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
-  top: 10px;
+  top: 5px;
   z-index: 10; /* Ensure it stays on top of other content */
   display: flex;
   flex-direction: column;
@@ -199,6 +199,11 @@ textarea {
 
   .preview-container {
     margin-top: 1rem;
+  }
+
+  .app-title {
+    display: flex;
+    justify-content: center;
   }
 }
 
